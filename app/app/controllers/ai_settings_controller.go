@@ -36,6 +36,7 @@ func UpdateSystemSettings(c *fiber.Ctx) error {
 	settings.PromptDonts = req.PromptDonts
 	settings.HandoffRules = req.HandoffRules
 	settings.AdminWhatsAppNumbers = req.AdminWhatsAppNumbers
+	settings.AutoAITimeoutMinutes = req.AutoAITimeoutMinutes
 	bootstrap.DB.Save(&settings)
 
 	return c.JSON(settings)

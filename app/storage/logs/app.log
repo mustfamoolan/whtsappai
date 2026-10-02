@@ -381,3 +381,5 @@
 {"level":"info","ts":"2026-10-02T12:27:30.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
 {"level":"info","ts":"2026-10-02T12:27:30.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
 {"level":"info","ts":"2026-10-02T12:27:32.378+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T12:57:18.853+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACBDDA9B797FDA2E40B1525A22CA132A"}
+{"level":"info","ts":"2026-10-02T12:57:18.862+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACBDDA9B797FDA2E40B1525A22CA132A"}

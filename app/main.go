@@ -46,5 +46,5 @@ func main() {
 	}
 
 	fmt.Printf("🚀 %s Started on port %s\n", config.Global.App.Name, port)
-	log.Fatal(app.Listen("0.0.0.0:" + port))
+	log.Fatal(app.Listen(":" + port))
 }
