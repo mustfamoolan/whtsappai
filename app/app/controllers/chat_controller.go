@@ -7,8 +7,6 @@ import (
 	"app/app/services/audit"
 	"github.com/gofiber/fiber/v2"
 	"go.mau.fi/whatsmeow/types"
-	"go.mau.fi/whatsmeow/proto/waE2E"
-	"google.golang.org/protobuf/proto"
 	"time"
 	"net/url"
 )
