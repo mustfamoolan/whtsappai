@@ -265,7 +265,7 @@ func (p *Processor) ProcessMessage(ctx context.Context, conv *models.Conversatio
 		responseText = strings.TrimSpace(responseText)
 		
 		if responseText == "" {
-			responseText = "تم استلام طلبك! سيتواصل معك الموظف قريباً لتأكيد الحجز."
+			responseText = "تم إبلاغ الموظف وسوف يتواصل معك بخصوص الحجز."
 		}
 	}
 

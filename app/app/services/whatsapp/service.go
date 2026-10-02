@@ -493,7 +493,7 @@ func (s *Service) processMessage(evt *events.Message) {
 				timer.Stop()
 			}
 			
-			s.debounce[conv.ID] = time.AfterFunc(3*time.Second, func() {
+			s.debounce[conv.ID] = time.AfterFunc(1*time.Second, func() {
 				s.debounceMu.Lock()
 				delete(s.debounce, conv.ID)
 				s.debounceMu.Unlock()
