@@ -18,3 +18,13 @@ func LogEvent(event models.AuditEvent, details, entityID, payload string) {
 		CreatedAt: time.Now(),
 	})
 }
+
+func StartCleanupJob() {
+	ticker := time.NewTicker(24 * time.Hour)
+	for range ticker.C {
+		if bootstrap.DB != nil {
+			oneMonthAgo := time.Now().AddDate(0, -1, 0)
+			bootstrap.DB.Where("created_at < ?", oneMonthAgo).Delete(&models.AuditLog{})
+		}
+	}
+}

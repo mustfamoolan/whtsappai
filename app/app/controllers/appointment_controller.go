@@ -4,12 +4,37 @@ import (
 	"app/app/models"
 	"app/bootstrap"
 	"github.com/gofiber/fiber/v2"
+	"strconv"
+	"math"
 )
 
 func GetAppointments(c *fiber.Ctx) error {
+	db := bootstrap.DB.Model(&models.Appointment{})
+	
+	// Pagination parameters
+	page, _ := strconv.Atoi(c.Query("page", "1"))
+	perPage, _ := strconv.Atoi(c.Query("per_page", "10"))
+	
+	if page < 1 { page = 1 }
+	if perPage < 1 { perPage = 10 }
+	if perPage > 100 { perPage = 100 } // max limit
+
+	var total int64
+	db.Count(&total)
+
 	var appointments []models.Appointment
-	bootstrap.DB.Preload("Doctor").Preload("Service").Order("date desc, time desc").Find(&appointments)
-	return c.JSON(appointments)
+	db.Preload("Doctor").Preload("Service").Order("date desc, time desc").Offset((page - 1) * perPage).Limit(perPage).Find(&appointments)
+
+	lastPage := math.Ceil(float64(total) / float64(perPage))
+	if lastPage < 1 { lastPage = 1 }
+
+	return c.JSON(fiber.Map{
+		"data": appointments,
+		"current_page": page,
+		"last_page": lastPage,
+		"total": total,
+		"per_page": perPage,
+	})
 }
 
 func CreateAppointment(c *fiber.Ctx) error {

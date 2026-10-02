@@ -383,3 +383,27 @@
 {"level":"info","ts":"2026-10-02T12:27:32.378+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
 {"level":"info","ts":"2026-10-02T12:57:18.853+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACBDDA9B797FDA2E40B1525A22CA132A"}
 {"level":"info","ts":"2026-10-02T12:57:18.862+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACBDDA9B797FDA2E40B1525A22CA132A"}
+{"level":"info","ts":"2026-10-02T13:39:26.010+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DEGRADED"}
+{"level":"info","ts":"2026-10-02T13:39:30.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:39:30.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T13:39:41.650+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T13:41:38.931+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DEGRADED"}
+{"level":"info","ts":"2026-10-02T13:42:00.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:42:00.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"error","ts":"2026-10-02T13:43:11.161+0300","logger":"whatsapp","caller":"whatsapp/service.go:616","msg":"Watchdog reconnect failed","error":"noise handshake failed: timed out waiting for handshake response"}
+{"level":"info","ts":"2026-10-02T13:43:11.181+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T13:43:11.181+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:43:11.181+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"error","ts":"2026-10-02T13:43:59.442+0300","logger":"whatsapp","caller":"whatsapp/service.go:616","msg":"Watchdog reconnect failed","error":"noise handshake failed: timed out waiting for handshake response"}
+{"level":"info","ts":"2026-10-02T13:43:59.460+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T13:43:59.460+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:43:59.460+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"error","ts":"2026-10-02T13:44:26.804+0300","logger":"whatsapp","caller":"whatsapp/service.go:616","msg":"Watchdog reconnect failed","error":"noise handshake failed: timed out waiting for handshake response"}
+{"level":"info","ts":"2026-10-02T13:44:26.823+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T13:44:26.823+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:44:26.823+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"error","ts":"2026-10-02T13:44:49.595+0300","logger":"whatsapp","caller":"whatsapp/service.go:616","msg":"Watchdog reconnect failed","error":"noise handshake failed: timed out waiting for handshake response"}
+{"level":"info","ts":"2026-10-02T13:44:49.610+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T13:44:49.610+0300","logger":"whatsapp","caller":"whatsapp/service.go:611","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T13:44:49.610+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T13:45:10.350+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}

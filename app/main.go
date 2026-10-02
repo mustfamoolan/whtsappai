@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"app/app/services/whatsapp"
+	"app/app/services/audit"
 	"app/bootstrap"
 	"app/config"
 	"app/routes"
@@ -20,6 +21,9 @@ func main() {
 
 	// 1.2 Initialize Cache (Redis)
 	bootstrap.InitializeCache()
+
+	// 1.3 Start Audit Cleanup Job
+	go audit.StartCleanupJob()
 
 	// 2. Initialize Database
 	bootstrap.InitializeDatabase()
