@@ -16,6 +16,15 @@ export default function ChatDashboard() {
   const [waStatus, setWaStatus] = useState(null);
   const messagesEndRef = useRef(null);
 
+  const formatPhone = (phone) => {
+    if (!phone) return '';
+    let p = phone.split('@')[0];
+    if (/^\d+$/.test(p)) {
+      return '+' + p;
+    }
+    return p;
+  };
+
   // Scroll to bottom
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -243,7 +252,7 @@ export default function ChatDashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-center mb-1">
-                      <h4 className="font-semibold text-sm truncate">{conv.name || conv.phone}</h4>
+                      <h4 className="font-semibold text-sm truncate">{conv.name || formatPhone(conv.phone)}</h4>
                       {conv.unread_count > 0 && selectedConv?.conversation_id !== conv.conversation_id && (
                         <span className="bg-green-500 text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full font-bold">
                           {conv.unread_count}
@@ -285,9 +294,9 @@ export default function ChatDashboard() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold flex items-center gap-2">
-                      {selectedConv.name || selectedConv.phone}
+                      {selectedConv.name || formatPhone(selectedConv.phone)}
                     </h3>
-                    <p className="text-xs text-muted-foreground" dir="ltr">{selectedConv.phone}</p>
+                    <p className="text-xs text-muted-foreground" dir="ltr">{formatPhone(selectedConv.phone)}</p>
                   </div>
                 </div>
                 
