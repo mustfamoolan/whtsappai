@@ -533,6 +533,7 @@ func (s *Service) processMessage(evt *events.Message) {
 							}
 							
 							adminNum = strings.ReplaceAll(adminNum, "+", "")
+							adminNum = strings.TrimPrefix(adminNum, "00")
 							
 							// Auto-format Iraqi local numbers
 							if strings.HasPrefix(adminNum, "07") {
@@ -665,7 +666,10 @@ func (s *Service) startOutboxWorker() {
 				Conversation: proto.String(msg.Text),
 			}
 
-			resp, err := s.client.SendMessage(context.Background(), jid, msgProto)
+			ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+			resp, err := s.client.SendMessage(ctx, jid, msgProto)
+			cancel()
+
 			if err == nil {
 				s.aiSentMessages.Store(resp.ID, true)
 				db.Model(&msg).Updates(map[string]interface{}{
@@ -673,7 +677,7 @@ func (s *Service) startOutboxWorker() {
 				})
 			} else {
 				msg.Retries++
-				if msg.Retries >= 5 {
+				if msg.Retries >= 3 {
 					db.Model(&msg).Updates(map[string]interface{}{
 						"status":  models.OutboxFailed,
 						"retries": msg.Retries,
@@ -681,6 +685,7 @@ func (s *Service) startOutboxWorker() {
 					s.logger.Error("Outbox: failed to send message (max retries)", zap.Error(err), zap.String("jid", msg.JID))
 				} else {
 					db.Model(&msg).Update("retries", msg.Retries)
+					s.logger.Warn("Outbox: failed to send message, will retry", zap.Error(err), zap.String("jid", msg.JID), zap.Int("retries", msg.Retries))
 				}
 			}
 		}
