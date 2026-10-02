@@ -1,0 +1,379 @@
+{"level":"info","ts":"2026-10-02T06:33:09.961+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T06:33:44.580+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:12:32.966+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"fatal","ts":"2026-10-02T07:12:32.982+0300","logger":"whatsapp","caller":"whatsapp/service.go:59","msg":"Failed to connect to WhatsApp database","error":"failed to open database: sql: unknown driver \"postgres\" (forgotten import?)"}
+{"level":"info","ts":"2026-10-02T07:13:10.639+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:34:43.983+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:36:38.136+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:41:20.444+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:42:28.764+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T07:58:07.884+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:14:07.281+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:16:00.083+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T08:16:00.933+0300","logger":"whatsapp","caller":"whatsapp/service.go:103","msg":"QR code generated"}
+{"level":"info","ts":"2026-10-02T08:16:30.031+0300","logger":"whatsapp","caller":"whatsapp/service.go:105","msg":"QR channel event","event":"success"}
+{"level":"info","ts":"2026-10-02T08:16:36.566+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:16:41.591+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC58A3EF0AC02860590321D12D14CBCB"}
+{"level":"info","ts":"2026-10-02T08:16:41.602+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"ACA1293FA51C18B2D4E03F78153EDC89"}
+{"level":"info","ts":"2026-10-02T08:16:41.613+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"ACBF9076A107E5C1C79CEC503AC48D7F"}
+{"level":"info","ts":"2026-10-02T08:16:41.834+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC0899B9010367344BCFB754B9218FB6"}
+{"level":"info","ts":"2026-10-02T08:16:42.045+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC96989AED2FF9C3B3FC033DC1F6D8C1"}
+{"level":"info","ts":"2026-10-02T08:16:42.066+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC71EC75F05EF009EDB123756F5E02B3"}
+{"level":"info","ts":"2026-10-02T08:16:42.075+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC52B2C2E8CF678F664E7BCC88B82B46"}
+{"level":"info","ts":"2026-10-02T08:16:42.951+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC60EDF7ECCCC8D105A3975FB793F1F5"}
+{"level":"info","ts":"2026-10-02T08:17:06.979+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"ACDB7931068D96E1A576AB21A24BB890"}
+{"level":"info","ts":"2026-10-02T08:17:06.995+0300","logger":"whatsapp","caller":"whatsapp/service.go:269","msg":"Incoming message saved","msgID":"ACDB7931068D96E1A576AB21A24BB890","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:17:06.995+0300","logger":"whatsapp","caller":"whatsapp/service.go:273","msg":"Message ready for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T08:17:06.997+0300","logger":"whatsapp","caller":"whatsapp/service.go:282","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T08:18:26.734+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"ACA70DD78B69262EF07002362034A97B"}
+{"level":"info","ts":"2026-10-02T08:18:26.750+0300","logger":"whatsapp","caller":"whatsapp/service.go:269","msg":"Incoming message saved","msgID":"ACA70DD78B69262EF07002362034A97B","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:18:26.750+0300","logger":"whatsapp","caller":"whatsapp/service.go:324","msg":"AI prevented from replying, conversation is in HUMAN mode","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T08:19:48.347+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:20:18.680+0300","logger":"whatsapp","caller":"whatsapp/service.go:337","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:20:18.680+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:20:20.298+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:23:43.510+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:24:13.830+0300","logger":"whatsapp","caller":"whatsapp/service.go:337","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:24:13.830+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:24:15.751+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:27:44.478+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"Received message","id":"AC04E52F7BFDEF9E979C9A234EA247F7"}
+{"level":"info","ts":"2026-10-02T08:27:44.493+0300","logger":"whatsapp","caller":"whatsapp/service.go:269","msg":"Incoming message saved","msgID":"AC04E52F7BFDEF9E979C9A234EA247F7","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:27:44.493+0300","logger":"whatsapp","caller":"whatsapp/service.go:273","msg":"Message ready for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T08:27:44.498+0300","logger":"whatsapp","caller":"whatsapp/service.go:282","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T08:32:48.627+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:33:18.948+0300","logger":"whatsapp","caller":"whatsapp/service.go:337","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:33:18.948+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:33:20.534+0300","logger":"whatsapp","caller":"whatsapp/service.go:151","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:35:14.365+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:35:39.777+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:36:10.089+0300","logger":"whatsapp","caller":"whatsapp/service.go:368","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:36:10.089+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:36:11.735+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:47:59.970+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:48:30.329+0300","logger":"whatsapp","caller":"whatsapp/service.go:377","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:48:30.329+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:48:32.016+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:50:15.888+0300","logger":"whatsapp","caller":"whatsapp/service.go:176","msg":"Received message","id":"AC40C3B22E2E766FBC0A6AA8C74F50A4"}
+{"level":"info","ts":"2026-10-02T08:50:15.900+0300","logger":"whatsapp","caller":"whatsapp/service.go:272","msg":"Incoming message saved","msgID":"AC40C3B22E2E766FBC0A6AA8C74F50A4","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:50:15.900+0300","logger":"whatsapp","caller":"whatsapp/service.go:276","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T08:50:18.909+0300","logger":"whatsapp","caller":"whatsapp/service.go:305","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T08:51:28.211+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:51:58.548+0300","logger":"whatsapp","caller":"whatsapp/service.go:374","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:51:58.548+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:52:00.182+0300","logger":"whatsapp","caller":"whatsapp/service.go:154","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T08:53:23.353+0300","logger":"whatsapp","caller":"whatsapp/service.go:176","msg":"Received message","id":"ACBA087F691FC2595994109170C0917A"}
+{"level":"info","ts":"2026-10-02T08:53:23.366+0300","logger":"whatsapp","caller":"whatsapp/service.go:272","msg":"Incoming message saved","msgID":"ACBA087F691FC2595994109170C0917A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:53:23.366+0300","logger":"whatsapp","caller":"whatsapp/service.go:276","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T08:53:26.680+0300","logger":"whatsapp","caller":"whatsapp/service.go:302","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T08:53:48.322+0300","logger":"whatsapp","caller":"whatsapp/service.go:176","msg":"Received message","id":"AC9D3FE092F00497D8FB7C1313E85D6C"}
+{"level":"info","ts":"2026-10-02T08:53:48.334+0300","logger":"whatsapp","caller":"whatsapp/service.go:272","msg":"Incoming message saved","msgID":"AC9D3FE092F00497D8FB7C1313E85D6C","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:53:48.334+0300","logger":"whatsapp","caller":"whatsapp/service.go:276","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T08:53:51.355+0300","logger":"whatsapp","caller":"whatsapp/service.go:302","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T08:54:02.258+0300","logger":"whatsapp","caller":"whatsapp/service.go:176","msg":"Received message","id":"ACC8ADFB34D3AB37F857C860FCE3504B"}
+{"level":"info","ts":"2026-10-02T08:54:02.270+0300","logger":"whatsapp","caller":"whatsapp/service.go:272","msg":"Incoming message saved","msgID":"ACC8ADFB34D3AB37F857C860FCE3504B","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:54:02.270+0300","logger":"whatsapp","caller":"whatsapp/service.go:361","msg":"AI prevented from replying, conversation is in HUMAN mode","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T08:54:07.697+0300","logger":"whatsapp","caller":"whatsapp/service.go:176","msg":"Received message","id":"ACE1B03714E7C7B832482063E0863B73"}
+{"level":"info","ts":"2026-10-02T08:54:07.731+0300","logger":"whatsapp","caller":"whatsapp/service.go:272","msg":"Incoming message saved","msgID":"ACE1B03714E7C7B832482063E0863B73","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T08:54:07.731+0300","logger":"whatsapp","caller":"whatsapp/service.go:361","msg":"AI prevented from replying, conversation is in HUMAN mode","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T08:58:17.224+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T08:58:47.540+0300","logger":"whatsapp","caller":"whatsapp/service.go:420","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T08:58:47.540+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T08:58:51.345+0300","logger":"whatsapp","caller":"whatsapp/service.go:173","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:00:34.062+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:00:34.382+0300","logger":"whatsapp","caller":"whatsapp/service.go:88","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:00:34.382+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:00:36.220+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:00:47.941+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:00:47.941+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T09:00:49.197+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:00:49.197+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T09:01:04.382+0300","logger":"whatsapp","caller":"whatsapp/service.go:428","msg":"Watchdog initiating reconnect..."}
+{"level":"info","ts":"2026-10-02T09:01:04.383+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"RECONNECTING"}
+{"level":"info","ts":"2026-10-02T09:01:06.229+0300","logger":"whatsapp","caller":"whatsapp/service.go:181","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:01:56.915+0300","logger":"whatsapp","caller":"whatsapp/service.go:230","msg":"Received message","id":"ACD90D40708C0694DEBD56F8636BEE45"}
+{"level":"info","ts":"2026-10-02T09:01:56.930+0300","logger":"whatsapp","caller":"whatsapp/service.go:326","msg":"Incoming message saved","msgID":"ACD90D40708C0694DEBD56F8636BEE45","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T09:01:56.930+0300","logger":"whatsapp","caller":"whatsapp/service.go:330","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T09:02:00.263+0300","logger":"whatsapp","caller":"whatsapp/service.go:356","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T09:02:11.405+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:02:11.734+0300","logger":"whatsapp","caller":"whatsapp/service.go:88","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:02:11.734+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:02:13.551+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:05:04.415+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"LOGGED_OUT"}
+{"level":"info","ts":"2026-10-02T09:05:34.461+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:05:34.461+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T09:05:38.646+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:05:38.646+0300","logger":"whatsapp","caller":"whatsapp/service.go:186","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T09:06:36.299+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:06:47.508+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:06:50.985+0300","logger":"whatsapp","caller":"whatsapp/service.go:124","msg":"QR code generated"}
+{"level":"info","ts":"2026-10-02T09:07:14.451+0300","logger":"whatsapp","caller":"whatsapp/service.go:126","msg":"QR channel event","event":"success"}
+{"level":"info","ts":"2026-10-02T09:07:21.083+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:07:26.139+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"ACDDE555B1FA13808E3DFE7223AE414A"}
+{"level":"info","ts":"2026-10-02T09:07:26.151+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC46EC1B89280C2218D01E8F34F9ADB8"}
+{"level":"info","ts":"2026-10-02T09:07:26.159+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC80924EEB4EC5F1D6655026D7E3BC29"}
+{"level":"info","ts":"2026-10-02T09:07:26.290+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC58E1BBE95684E7A3562746A47D781F"}
+{"level":"info","ts":"2026-10-02T09:07:26.442+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC8CF2C64FEEF0B0847BF4376EB8D306"}
+{"level":"info","ts":"2026-10-02T09:07:26.453+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC730E031026B5E46417DF1872A7B911"}
+{"level":"info","ts":"2026-10-02T09:07:26.462+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC1EF43B0B3CF584DE0F00CBA17F7DEF"}
+{"level":"info","ts":"2026-10-02T09:07:27.211+0300","logger":"whatsapp","caller":"whatsapp/service.go:252","msg":"Received message","id":"AC6483F97C6C18CD8F495096954FDC79"}
+{"level":"info","ts":"2026-10-02T09:09:26.753+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:09:27.081+0300","logger":"whatsapp","caller":"whatsapp/service.go:90","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:09:27.082+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:09:32.575+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:11:03.516+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:11:03.835+0300","logger":"whatsapp","caller":"whatsapp/service.go:90","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:11:03.835+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:11:06.506+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:13:57.611+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:13:57.955+0300","logger":"whatsapp","caller":"whatsapp/service.go:90","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:13:57.955+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:13:59.841+0300","logger":"whatsapp","caller":"whatsapp/service.go:203","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:15:05.603+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:15:05.934+0300","logger":"whatsapp","caller":"whatsapp/service.go:90","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:15:05.935+0300","logger":"whatsapp","caller":"whatsapp/service.go:213","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:15:07.560+0300","logger":"whatsapp","caller":"whatsapp/service.go:213","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:15:45.847+0300","logger":"whatsapp","caller":"whatsapp/service.go:290","msg":"Received message","id":"3EB0CDA2CCF857055CF1F7"}
+{"level":"info","ts":"2026-10-02T09:16:24.193+0300","logger":"whatsapp","caller":"whatsapp/service.go:290","msg":"Received message","id":"3EB094715395066EA6CF5B"}
+{"level":"info","ts":"2026-10-02T09:18:43.823+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:18:44.181+0300","logger":"whatsapp","caller":"whatsapp/service.go:90","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:18:44.181+0300","logger":"whatsapp","caller":"whatsapp/service.go:213","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:18:48.421+0300","logger":"whatsapp","caller":"whatsapp/service.go:213","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:18:57.775+0300","logger":"whatsapp","caller":"whatsapp/service.go:290","msg":"Received message","id":"AC62912EE7A4E46EF70B0AA1DF3B1F2F"}
+{"level":"info","ts":"2026-10-02T09:18:57.779+0300","logger":"whatsapp","caller":"whatsapp/service.go:376","msg":"Conversation mode changed to HUMAN because reply came from phone","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T09:18:57.791+0300","logger":"whatsapp","caller":"whatsapp/service.go:403","msg":"Message saved","msgID":"AC62912EE7A4E46EF70B0AA1DF3B1F2F","phone":"196912053489879"}
+{"level":"info","ts":"2026-10-02T09:19:10.977+0300","logger":"whatsapp","caller":"whatsapp/service.go:290","msg":"Received message","id":"AC959DEA57E2406F0C7A861C5339EB38"}
+{"level":"info","ts":"2026-10-02T09:19:10.982+0300","logger":"whatsapp","caller":"whatsapp/service.go:376","msg":"Conversation mode changed to HUMAN because reply came from phone","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T09:19:10.988+0300","logger":"whatsapp","caller":"whatsapp/service.go:403","msg":"Message saved","msgID":"AC959DEA57E2406F0C7A861C5339EB38","phone":"196912053489879"}
+{"level":"info","ts":"2026-10-02T09:27:26.190+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:27:26.552+0300","logger":"whatsapp","caller":"whatsapp/service.go:91","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:27:26.553+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:27:31.042+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:49:01.911+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:49:02.280+0300","logger":"whatsapp","caller":"whatsapp/service.go:91","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:49:02.281+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:49:03.771+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T09:57:23.230+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T09:57:23.638+0300","logger":"whatsapp","caller":"whatsapp/service.go:91","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T09:57:23.638+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T09:57:25.434+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T10:06:33.879+0300","logger":"whatsapp","caller":"whatsapp/service.go:293","msg":"Received message","id":"AC4A1096E589FEE81EE476B15D6CBF40"}
+{"level":"info","ts":"2026-10-02T10:06:33.942+0300","logger":"whatsapp","caller":"whatsapp/service.go:408","msg":"Message saved","msgID":"AC4A1096E589FEE81EE476B15D6CBF40","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T10:06:33.942+0300","logger":"whatsapp","caller":"whatsapp/service.go:414","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T10:06:37.246+0300","logger":"whatsapp","caller":"whatsapp/service.go:440","msg":"AI processing failed","error":"gemini api key is not set"}
+{"level":"info","ts":"2026-10-02T10:32:19.370+0300","logger":"whatsapp","caller":"whatsapp/service.go:293","msg":"Received message","id":"3EB0EDAC933FEAD5CF56BB"}
+{"level":"info","ts":"2026-10-02T10:32:19.375+0300","logger":"whatsapp","caller":"whatsapp/service.go:379","msg":"Conversation mode changed to HUMAN because reply came from phone","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T10:32:19.390+0300","logger":"whatsapp","caller":"whatsapp/service.go:408","msg":"Message saved","msgID":"3EB0EDAC933FEAD5CF56BB","phone":"196912053489879"}
+{"level":"info","ts":"2026-10-02T11:06:48.608+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"DISCONNECTED"}
+{"level":"info","ts":"2026-10-02T11:06:50.927+0300","logger":"whatsapp","caller":"whatsapp/service.go:216","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:09:27.470+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:09:27.834+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:09:27.834+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:09:29.283+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:10:16.371+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC4B623351F572DDAE851A22724CDBDE"}
+{"level":"info","ts":"2026-10-02T11:10:16.384+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC4B623351F572DDAE851A22724CDBDE","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:10:16.384+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T11:10:21.014+0300","logger":"whatsapp","caller":"whatsapp/service.go:441","msg":"AI processing failed","error":"gemini api error, status code: 404"}
+{"level":"info","ts":"2026-10-02T11:12:43.621+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:12:44.000+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:12:44.000+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:12:45.692+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:13:28.933+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACD16EDB1733CC0CD8A0C6137E8B5965"}
+{"level":"info","ts":"2026-10-02T11:13:28.947+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACD16EDB1733CC0CD8A0C6137E8B5965","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:13:28.947+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:13:47.535+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACA427E552D4AD2C889CAEF63517AF3A"}
+{"level":"info","ts":"2026-10-02T11:13:47.546+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACA427E552D4AD2C889CAEF63517AF3A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:13:47.546+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:14:25.020+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACD6453A6C93A3BA9095067FE43B855A"}
+{"level":"info","ts":"2026-10-02T11:14:25.040+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACD6453A6C93A3BA9095067FE43B855A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:14:25.040+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:17:40.537+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:17:40.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:17:40.903+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:17:42.383+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:18:43.259+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACB0EE64EC1B83E9F02D23DA28C7E32A"}
+{"level":"info","ts":"2026-10-02T11:18:43.270+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACB0EE64EC1B83E9F02D23DA28C7E32A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:18:43.270+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:18:48.718+0300","logger":"whatsapp","caller":"whatsapp/service.go:450","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:19:12.138+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACC58F5AA020DCA72ACB34585658E886"}
+{"level":"info","ts":"2026-10-02T11:19:12.151+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACC58F5AA020DCA72ACB34585658E886","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:19:12.151+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:19:17.001+0300","logger":"whatsapp","caller":"whatsapp/service.go:450","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:21:47.293+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACD0B5AAC7450A2C2AEA7C42DF6ED2E0"}
+{"level":"info","ts":"2026-10-02T11:21:47.302+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACD0B5AAC7450A2C2AEA7C42DF6ED2E0","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:21:47.302+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:21:52.470+0300","logger":"whatsapp","caller":"whatsapp/service.go:450","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:26:47.179+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:26:47.583+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:26:47.583+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:27:33.238+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:27:33.640+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:27:33.640+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:27:35.561+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:28:07.525+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC5F951480D65EAB6A546CA331FEC40C"}
+{"level":"info","ts":"2026-10-02T11:28:07.539+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC5F951480D65EAB6A546CA331FEC40C","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:28:07.539+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:28:15.700+0300","logger":"whatsapp","caller":"whatsapp/service.go:450","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:35:35.200+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:35:35.585+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:35:35.585+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:35:39.368+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:36:27.406+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC3DB755DCC1FDAE9F725EE93EB829E6"}
+{"level":"info","ts":"2026-10-02T11:36:27.416+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC3DB755DCC1FDAE9F725EE93EB829E6","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:36:27.416+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:36:49.672+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC4CF095CF1BEF2045797CD06F4FE736"}
+{"level":"info","ts":"2026-10-02T11:36:49.687+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC4CF095CF1BEF2045797CD06F4FE736","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:36:49.687+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:37:25.683+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACF8F084D8999876754A91C7EA70EE83"}
+{"level":"info","ts":"2026-10-02T11:37:25.693+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACF8F084D8999876754A91C7EA70EE83","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:37:25.693+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:37:49.310+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACC2ACB5E8CCB26609F9492ACA31E50C"}
+{"level":"info","ts":"2026-10-02T11:37:49.317+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACC2ACB5E8CCB26609F9492ACA31E50C","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:37:49.317+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:39:03.610+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:39:04.049+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:39:04.049+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:39:06.218+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:39:39.451+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC4B0C5285EA2F8153DD62097F78CBD5"}
+{"level":"info","ts":"2026-10-02T11:39:39.464+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC4B0C5285EA2F8153DD62097F78CBD5","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:39:39.464+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:40:36.282+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACF0C284C158F0B32D74580950367D81"}
+{"level":"info","ts":"2026-10-02T11:40:36.291+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACF0C284C158F0B32D74580950367D81","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:40:36.291+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:41:02.386+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC2A25DB512143C8EA37D850391DD3CC"}
+{"level":"info","ts":"2026-10-02T11:41:02.399+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC2A25DB512143C8EA37D850391DD3CC","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:41:02.399+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:41:18.058+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC1AE6526FEA03CB8B3AE86656128535"}
+{"level":"info","ts":"2026-10-02T11:41:18.067+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC1AE6526FEA03CB8B3AE86656128535","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:41:18.067+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:41:36.900+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC63DF6E798AFD6EF0530EB271582C82"}
+{"level":"info","ts":"2026-10-02T11:41:36.912+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC63DF6E798AFD6EF0530EB271582C82","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:41:36.912+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:42:02.712+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC046E99DB1EF60A18213E2E04342919"}
+{"level":"info","ts":"2026-10-02T11:42:02.725+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC046E99DB1EF60A18213E2E04342919","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:42:02.725+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:46:39.149+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:46:39.547+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:46:39.547+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:46:43.011+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:47:30.041+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACED4CC345B643FB6DAE31A37444611E"}
+{"level":"info","ts":"2026-10-02T11:47:30.054+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACED4CC345B643FB6DAE31A37444611E","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:47:30.054+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:47:58.213+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC06BE60F0A98D9702661094293C45FC"}
+{"level":"info","ts":"2026-10-02T11:47:58.221+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC06BE60F0A98D9702661094293C45FC","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:47:58.221+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:48:36.745+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACFF28D72AFEF43441791EC392EE2ED0"}
+{"level":"info","ts":"2026-10-02T11:48:36.758+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACFF28D72AFEF43441791EC392EE2ED0","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:48:36.758+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:48:41.403+0300","logger":"whatsapp","caller":"whatsapp/service.go:454","msg":"AI recorded an appointment","convID":"108727617216660@lid"}
+{"level":"error","ts":"2026-10-02T11:49:56.407+0300","logger":"whatsapp","caller":"whatsapp/service.go:483","msg":"Failed to send admin notification","error":"failed to get user info for 07742209251@s.whatsapp.net to fill LID cache: failed to send usync query: info query timed out","adminJID":"07742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T11:50:42.344+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACC49D3FAAADA691E431039FB505EAAA"}
+{"level":"info","ts":"2026-10-02T11:50:42.360+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACC49D3FAAADA691E431039FB505EAAA","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:50:42.360+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:50:53.135+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC866EA1EA87F294D3A3F6ABE274C5A7"}
+{"level":"info","ts":"2026-10-02T11:50:53.149+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC866EA1EA87F294D3A3F6ABE274C5A7","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:50:53.149+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:51:04.875+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC7D1EAC9B76BBC5F5B61606F2761F48"}
+{"level":"info","ts":"2026-10-02T11:51:04.888+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC7D1EAC9B76BBC5F5B61606F2761F48","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:51:04.888+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:51:19.807+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACD903863640526C5ABE6844AD1D84F3"}
+{"level":"info","ts":"2026-10-02T11:51:19.818+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACD903863640526C5ABE6844AD1D84F3","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:51:19.818+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:51:46.156+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:51:46.521+0300","logger":"whatsapp","caller":"whatsapp/service.go:92","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:51:46.521+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:51:48.086+0300","logger":"whatsapp","caller":"whatsapp/service.go:217","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:51:48.275+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACFA1060F3AAB72208BE3C4F3DCE5177"}
+{"level":"info","ts":"2026-10-02T11:51:48.285+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACFA1060F3AAB72208BE3C4F3DCE5177","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:51:48.285+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:52:23.442+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC8C815055F0920A0F3E7882037A638A"}
+{"level":"info","ts":"2026-10-02T11:52:23.454+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC8C815055F0920A0F3E7882037A638A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:52:23.454+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:52:35.772+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"ACF51D51253ECD0DBDB2D9A21CE276E2"}
+{"level":"info","ts":"2026-10-02T11:52:35.782+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"ACF51D51253ECD0DBDB2D9A21CE276E2","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:52:35.782+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:52:40.191+0300","logger":"whatsapp","caller":"whatsapp/service.go:451","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:52:40.419+0300","logger":"whatsapp","caller":"whatsapp/service.go:492","msg":"Admin notification sent","adminJID":"9647742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T11:52:50.152+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC3DB221C351FF24420B83A49B900D6A"}
+{"level":"info","ts":"2026-10-02T11:52:50.161+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC3DB221C351FF24420B83A49B900D6A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:52:50.161+0300","logger":"whatsapp","caller":"whatsapp/service.go:553","msg":"AI prevented from replying, conversation is in HUMAN mode","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:53:01.740+0300","logger":"whatsapp","caller":"whatsapp/service.go:294","msg":"Received message","id":"AC9E264912A73B0F4C54B8DED9703BC8"}
+{"level":"info","ts":"2026-10-02T11:53:01.749+0300","logger":"whatsapp","caller":"whatsapp/service.go:409","msg":"Message saved","msgID":"AC9E264912A73B0F4C54B8DED9703BC8","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:53:01.749+0300","logger":"whatsapp","caller":"whatsapp/service.go:415","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:53:06.335+0300","logger":"whatsapp","caller":"whatsapp/service.go:451","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:53:06.543+0300","logger":"whatsapp","caller":"whatsapp/service.go:492","msg":"Admin notification sent","adminJID":"9647742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T11:57:22.337+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T11:57:22.701+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T11:57:22.701+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T11:57:24.193+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T11:58:41.925+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC585C20201AF1EDD73AADB5FAADFF54"}
+{"level":"info","ts":"2026-10-02T11:58:41.936+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC585C20201AF1EDD73AADB5FAADFF54","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:58:41.936+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:58:55.225+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACE7E97F6D4D61DFE45D6D7B4CB7C4F4"}
+{"level":"info","ts":"2026-10-02T11:58:55.234+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"ACE7E97F6D4D61DFE45D6D7B4CB7C4F4","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:58:55.234+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:59:10.668+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC6656573D24CFCCEF372A76F216CE33"}
+{"level":"info","ts":"2026-10-02T11:59:10.677+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC6656573D24CFCCEF372A76F216CE33","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:59:10.678+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:59:35.236+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC86BA558DE8DBFB4779BC56B7A5EC2C"}
+{"level":"info","ts":"2026-10-02T11:59:35.245+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC86BA558DE8DBFB4779BC56B7A5EC2C","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:59:35.245+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T11:59:55.985+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC953FF7DAB6CA3DF8BA5B189C3032ED"}
+{"level":"info","ts":"2026-10-02T11:59:55.993+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC953FF7DAB6CA3DF8BA5B189C3032ED","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T11:59:55.994+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:00:42.417+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACDFF531BFBC74FE7FF71E707F994AAD"}
+{"level":"info","ts":"2026-10-02T12:00:42.434+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"ACDFF531BFBC74FE7FF71E707F994AAD","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:00:42.434+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:02:13.075+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T12:02:13.456+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T12:02:13.456+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T12:02:16.107+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T12:03:15.315+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACD9753FDDA077F31B8C716058745633"}
+{"level":"info","ts":"2026-10-02T12:03:15.328+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"ACD9753FDDA077F31B8C716058745633","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:03:15.328+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:03:21.071+0300","logger":"whatsapp","caller":"whatsapp/service.go:497","msg":"AI recorded an appointment","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:03:21.712+0300","logger":"whatsapp","caller":"whatsapp/service.go:535","msg":"Admin notification sent","adminJID":"9647742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T12:06:31.987+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T12:06:32.375+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T12:06:32.375+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T12:06:34.020+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T12:08:48.417+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T12:08:48.807+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T12:08:48.807+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T12:08:52.591+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T12:10:06.740+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC07B3CDD15D576A3E5F27963ADBB7F7"}
+{"level":"info","ts":"2026-10-02T12:10:06.752+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC07B3CDD15D576A3E5F27963ADBB7F7","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:10:06.752+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:10:39.486+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC9531F32AF6744D34A866BEF07AD912"}
+{"level":"info","ts":"2026-10-02T12:10:39.498+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC9531F32AF6744D34A866BEF07AD912","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:10:39.498+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:11:00.107+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACDD943F3F85250A0B2273B76613A123"}
+{"level":"info","ts":"2026-10-02T12:11:00.117+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"ACDD943F3F85250A0B2273B76613A123","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:11:00.117+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:11:33.109+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC73F04F300EB06112E5B04D917FDD3A"}
+{"level":"info","ts":"2026-10-02T12:11:33.124+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC73F04F300EB06112E5B04D917FDD3A","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:11:33.124+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:11:37.852+0300","logger":"whatsapp","caller":"whatsapp/service.go:497","msg":"AI recorded an appointment","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:11:38.189+0300","logger":"whatsapp","caller":"whatsapp/service.go:535","msg":"Admin notification sent","adminJID":"9647742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T12:12:12.287+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC2796925C1BE7B9ECD22EE2513E37A6"}
+{"level":"info","ts":"2026-10-02T12:12:12.298+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC2796925C1BE7B9ECD22EE2513E37A6","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:12:12.298+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:12:35.604+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC3F8D942DDFB89B0CB5AE6E09F8A2B6"}
+{"level":"info","ts":"2026-10-02T12:12:35.612+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC3F8D942DDFB89B0CB5AE6E09F8A2B6","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:12:35.612+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:12:50.936+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC9BE4C951EF8BB7B9715AD60214E2D3"}
+{"level":"info","ts":"2026-10-02T12:12:50.949+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC9BE4C951EF8BB7B9715AD60214E2D3","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:12:50.949+0300","logger":"whatsapp","caller":"whatsapp/service.go:458","msg":"Message queued for AI processing","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:12:55.500+0300","logger":"whatsapp","caller":"whatsapp/service.go:494","msg":"Conversation mode changed to HUMAN due to intent","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:12:55.813+0300","logger":"whatsapp","caller":"whatsapp/service.go:535","msg":"Admin notification sent","adminJID":"9647742209251@s.whatsapp.net"}
+{"level":"info","ts":"2026-10-02T12:13:11.745+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"ACAAF4080297348A776F51929985ADA6"}
+{"level":"info","ts":"2026-10-02T12:13:11.753+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"ACAAF4080297348A776F51929985ADA6","phone":"108727617216660"}
+{"level":"info","ts":"2026-10-02T12:13:11.753+0300","logger":"whatsapp","caller":"whatsapp/service.go:597","msg":"AI prevented from replying, conversation is in HUMAN mode","convID":"108727617216660@lid"}
+{"level":"info","ts":"2026-10-02T12:18:48.828+0300","logger":"whatsapp","caller":"whatsapp/service.go:180","msg":"Auto-reverted 1 conversations back to AI mode due to 5 minutes inactivity"}
+{"level":"info","ts":"2026-10-02T12:22:36.887+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T12:22:37.345+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T12:22:37.345+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T12:22:39.118+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
+{"level":"info","ts":"2026-10-02T12:23:06.995+0300","caller":"bootstrap/logger.go:51","msg":"Logger initialized successfully","level":"debug"}
+{"level":"info","ts":"2026-10-02T12:23:07.369+0300","logger":"whatsapp","caller":"whatsapp/service.go:93","msg":"Existing session found, auto-connecting on boot..."}
+{"level":"info","ts":"2026-10-02T12:23:07.369+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTING"}
+{"level":"info","ts":"2026-10-02T12:23:09.007+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"CONNECTED"}
