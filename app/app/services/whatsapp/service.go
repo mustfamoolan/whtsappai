@@ -364,9 +364,12 @@ func (s *Service) processMessage(evt *events.Message) {
 		return
 	}
 
-	phone := evt.Info.Sender.User
+	phone := evt.Info.Chat.User
 	remoteJid := evt.Info.Chat.String() // Use chat JID as conversation ID
-	senderName := evt.Info.PushName
+	senderName := ""
+	if !evt.Info.IsFromMe {
+		senderName = evt.Info.PushName
+	}
 	msgID := evt.Info.ID
 	timestamp := evt.Info.Timestamp
 
@@ -437,7 +440,10 @@ func (s *Service) processMessage(evt *events.Message) {
 		// Update existing
 		conv.LastMessage = content
 		conv.LastActivity = timestamp
-		conv.Name = senderName // Update name just in case it changed
+		if senderName != "" {
+			conv.Name = senderName // Update name just in case it changed
+		}
+		conv.Phone = phone // Ensure correct phone is saved
 		
 		if evt.Info.IsFromMe {
 			_, isAiMsg := s.aiSentMessages.Load(msgID)
