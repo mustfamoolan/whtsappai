@@ -508,6 +508,8 @@ func (s *Service) processMessage(evt *events.Message) {
 								continue
 							}
 							
+							adminNum = strings.ReplaceAll(adminNum, "+", "")
+							
 							// Auto-format Iraqi local numbers
 							if strings.HasPrefix(adminNum, "07") {
 								adminNum = "964" + adminNum[1:]
