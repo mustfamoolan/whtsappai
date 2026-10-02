@@ -297,7 +297,11 @@ func (p *Processor) gatherKnowledgeContext(intent Intent) string {
 	if len(docs) > 0 {
 		sb.WriteString("\n[الأطباء]\n")
 		for _, d := range docs {
-			sb.WriteString(fmt.Sprintf("- %s (تخصص: %s) | أيام العمل: %s | ساعات: %s\n", d.Name, d.Specialty, d.WorkingDays, d.WorkingHours))
+			fee := d.ConsultationFee
+			if fee == "" {
+				fee = "غير محدد"
+			}
+			sb.WriteString(fmt.Sprintf("- %s (تخصص: %s) | أيام العمل: %s | ساعات: %s | الكشفية: %s\n", d.Name, d.Specialty, d.WorkingDays, d.WorkingHours, fee))
 		}
 	}
 

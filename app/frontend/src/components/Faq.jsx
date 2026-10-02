@@ -7,7 +7,8 @@ import { Input } from './ui/input';
 export default function Faq() {
   const [faqs, setFaqs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ question: '', approved_answer: '' });
+  const [form, setForm] = useState({ id: null, question: '', approved_answer: '' });
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     fetchFaqs();
@@ -24,17 +25,21 @@ export default function Faq() {
     }
   };
 
-  const handleAdd = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('/api/v1/knowledge/faqs', {
-        method: 'POST',
+      const url = isEditing ? `/api/v1/knowledge/faqs/${form.id}` : '/api/v1/knowledge/faqs';
+      const method = isEditing ? 'PUT' : 'POST';
+
+      const res = await fetch(url, {
+        method,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
       });
+      
       if (res.ok) {
-        setForm({ question: '', approved_answer: '' });
+        resetForm();
         fetchFaqs();
       }
     } catch (err) {
@@ -45,23 +50,38 @@ export default function Faq() {
   };
 
   const handleDelete = async (id) => {
+    if (!window.confirm("هل أنت متأكد من حذف هذا السؤال؟")) return;
     try {
       await fetch(`/api/v1/knowledge/faqs/${id}`, { method: 'DELETE' });
       fetchFaqs();
     } catch (err) {
       console.error(err);
     }
-  }
+  };
+
+  const handleEdit = (faq) => {
+    setForm({
+      id: faq.id,
+      question: faq.question,
+      approved_answer: faq.approved_answer
+    });
+    setIsEditing(true);
+  };
+
+  const resetForm = () => {
+    setForm({ id: null, question: '', approved_answer: '' });
+    setIsEditing(false);
+  };
 
   return (
     <PageContainer title="الأسئلة الشائعة" description="إدارة الأسئلة وإجاباتها المعتمدة للذكاء الاصطناعي">
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>إضافة سؤال جديد</CardTitle>
+            <CardTitle>{isEditing ? 'تعديل سؤال' : 'إضافة سؤال جديد'}</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleAdd} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="text-sm font-medium">السؤال المتوقع من المريض</label>
                 <Input value={form.question} onChange={e => setForm({...form, question: e.target.value})} placeholder="مثال: هل يتوفر تبييض أسنان؟" required />
@@ -70,7 +90,16 @@ export default function Faq() {
                 <label className="text-sm font-medium">الإجابة المعتمدة (سيتم تدريب AI عليها)</label>
                 <Input value={form.approved_answer} onChange={e => setForm({...form, approved_answer: e.target.value})} placeholder="مثال: نعم، يتوفر تبييض بتقنية الليزر..." required />
               </div>
-              <Button type="submit" disabled={loading}>إضافة سؤال</Button>
+              <div className="flex gap-2">
+                <Button type="submit" disabled={loading} className="flex-1">
+                  {isEditing ? 'تحديث' : 'إضافة سؤال'}
+                </Button>
+                {isEditing && (
+                  <Button type="button" variant="outline" onClick={resetForm} className="flex-1">
+                    إلغاء
+                  </Button>
+                )}
+              </div>
             </form>
           </CardContent>
         </Card>
@@ -86,8 +115,11 @@ export default function Faq() {
               <div className="space-y-4">
                 {faqs.map(faq => (
                   <div key={faq.id} className="flex flex-col p-4 border rounded-lg bg-card gap-2 relative">
-                    <Button variant="destructive" size="sm" onClick={() => handleDelete(faq.id)} className="absolute top-4 left-4 h-6 px-2 text-[10px]">حذف</Button>
-                    <h4 className="font-semibold text-sm pl-12 text-primary">{faq.question}</h4>
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <Button variant="outline" size="sm" onClick={() => handleEdit(faq)} className="h-6 px-2 text-[10px]">تعديل</Button>
+                      <Button variant="destructive" size="sm" onClick={() => handleDelete(faq.id)} className="h-6 px-2 text-[10px]">حذف</Button>
+                    </div>
+                    <h4 className="font-semibold text-sm pl-24 text-primary">{faq.question}</h4>
                     <p className="text-sm text-muted-foreground">{faq.approved_answer}</p>
                   </div>
                 ))}

@@ -7,7 +7,8 @@ import { Input } from './ui/input';
 export default function Services() {
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({ name: '', description: '', price: 0, duration: '' });
+  const [form, setForm] = useState({ id: null, name: '', description: '', price: 0, duration: '' });
+  const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {
     fetchServices();
@@ -24,17 +25,21 @@ export default function Services() {
     }
   };
 
-  const handleAdd = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('/api/v1/knowledge/services', {
-        method: 'POST',
+      const url = isEditing ? `/api/v1/knowledge/services/${form.id}` : '/api/v1/knowledge/services';
+      const method = isEditing ? 'PUT' : 'POST';
+
+      const res = await fetch(url, {
+        method,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({...form, price: parseFloat(form.price)})
       });
+      
       if (res.ok) {
-        setForm({ name: '', description: '', price: 0, duration: '' });
+        resetForm();
         fetchServices();
       }
     } catch (err) {
@@ -45,23 +50,40 @@ export default function Services() {
   };
 
   const handleDelete = async (id) => {
+    if (!window.confirm("هل أنت متأكد من حذف هذه الخدمة؟")) return;
     try {
       await fetch(`/api/v1/knowledge/services/${id}`, { method: 'DELETE' });
       fetchServices();
     } catch (err) {
       console.error(err);
     }
-  }
+  };
+
+  const handleEdit = (svc) => {
+    setForm({
+      id: svc.id,
+      name: svc.name,
+      description: svc.description,
+      price: svc.price,
+      duration: svc.duration
+    });
+    setIsEditing(true);
+  };
+
+  const resetForm = () => {
+    setForm({ id: null, name: '', description: '', price: 0, duration: '' });
+    setIsEditing(false);
+  };
 
   return (
-    <PageContainer title="إدارة الخدمات" description="إضافة وحذف خدمات العيادة وأسعارها">
+    <PageContainer title="إدارة الخدمات" description="إضافة وتعديل وحذف خدمات العيادة وأسعارها">
       <div className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
-            <CardTitle>إضافة خدمة جديدة</CardTitle>
+            <CardTitle>{isEditing ? 'تعديل خدمة' : 'إضافة خدمة جديدة'}</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleAdd} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="text-sm font-medium">اسم الخدمة</label>
                 <Input value={form.name} onChange={e => setForm({...form, name: e.target.value})} required />
@@ -78,7 +100,16 @@ export default function Services() {
                 <label className="text-sm font-medium">المدة المتوقعة</label>
                 <Input value={form.duration} onChange={e => setForm({...form, duration: e.target.value})} placeholder="مثال: 30 دقيقة" required />
               </div>
-              <Button type="submit" disabled={loading}>إضافة</Button>
+              <div className="flex gap-2">
+                <Button type="submit" disabled={loading} className="flex-1">
+                  {isEditing ? 'تحديث' : 'إضافة'}
+                </Button>
+                {isEditing && (
+                  <Button type="button" variant="outline" onClick={resetForm} className="flex-1">
+                    إلغاء
+                  </Button>
+                )}
+              </div>
             </form>
           </CardContent>
         </Card>
@@ -99,7 +130,10 @@ export default function Services() {
                       <p className="text-xs text-muted-foreground">{svc.description}</p>
                       <p className="text-sm font-semibold mt-1 text-primary">{svc.price} د.ع | {svc.duration}</p>
                     </div>
-                    <Button variant="destructive" size="sm" onClick={() => handleDelete(svc.id)}>حذف</Button>
+                    <div className="flex flex-col gap-2">
+                      <Button variant="outline" size="sm" onClick={() => handleEdit(svc)}>تعديل</Button>
+                      <Button variant="destructive" size="sm" onClick={() => handleDelete(svc.id)}>حذف</Button>
+                    </div>
                   </div>
                 ))}
               </div>

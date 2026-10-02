@@ -19,14 +19,15 @@ type Clinic struct {
 
 // Doctor info
 type Doctor struct {
-	ID           uint      `gorm:"primaryKey" json:"id"`
-	Name         string    `json:"name"`
-	Specialty    string    `json:"specialty"`
-	WorkingDays  string    `json:"working_days"`
-	WorkingHours string    `json:"working_hours"`
-	Active       bool      `gorm:"default:true" json:"active"`
-	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	ID              uint      `gorm:"primaryKey" json:"id"`
+	Name            string    `json:"name"`
+	Specialty       string    `json:"specialty"`
+	WorkingDays     string    `json:"working_days"`
+	WorkingHours    string    `json:"working_hours"`
+	ConsultationFee string    `json:"consultation_fee"`
+	Active          bool      `gorm:"default:true" json:"active"`
+	CreatedAt       time.Time `json:"created_at"`
+	UpdatedAt       time.Time `json:"updated_at"`
 }
 
 // Service info
