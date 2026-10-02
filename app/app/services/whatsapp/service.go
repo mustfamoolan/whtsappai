@@ -13,6 +13,7 @@ import (
 	"app/app/services/ai"
 	"app/app/services/audit"
 	"go.mau.fi/whatsmeow"
+	"go.mau.fi/whatsmeow/store"
 	"go.mau.fi/whatsmeow/store/sqlstore"
 	"go.mau.fi/whatsmeow/types"
 	"go.mau.fi/whatsmeow/types/events"
@@ -21,6 +22,7 @@ import (
 	_ "github.com/lib/pq"
 	"gorm.io/gorm"
 	"go.mau.fi/whatsmeow/proto/waE2E"
+	"go.mau.fi/whatsmeow/proto/waCompanionReg"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -40,7 +42,8 @@ type Service struct {
 	state      ConnectionState
 	stateMu    sync.RWMutex
 	logger     *zap.Logger
-	qrChan        chan string
+	currentQR  string
+	qrMu       sync.RWMutex
 	debounceMu    sync.Mutex
 	debounce      map[string]*time.Timer
 	connectedAt   *time.Time
@@ -58,7 +61,6 @@ func GetService(logger *zap.Logger) *Service {
 		instance = &Service{
 			state:    StateDisconnected,
 			logger:   logger.Named("whatsapp"),
-			qrChan:   make(chan string, 1),
 			debounce: make(map[string]*time.Timer),
 		}
 		instance.init()
@@ -67,6 +69,10 @@ func GetService(logger *zap.Logger) *Service {
 }
 
 func (s *Service) init() {
+	// Set default device properties to Mac OS to avoid being blocked by WhatsApp
+	store.DeviceProps.PlatformType = waCompanionReg.DeviceProps_MAC.Enum()
+	store.DeviceProps.Os = proto.String("Mac OS")
+
 	dbConfig := config.Global.Database
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Shanghai",
 		dbConfig.Host, dbConfig.Username, dbConfig.Password, dbConfig.Database, dbConfig.Port)
@@ -119,14 +125,18 @@ func (s *Service) Connect() error {
 		go func() {
 			for evt := range qrChan {
 				if evt.Event == "code" {
-					select {
-					case s.qrChan <- evt.Code:
-					default:
-						// non-blocking send
-						<-s.qrChan
-						s.qrChan <- evt.Code
-					}
+					s.qrMu.Lock()
+					s.currentQR = evt.Code
+					s.qrMu.Unlock()
 					s.logger.Info("QR code generated")
+				} else if evt.Event == "timeout" {
+					s.qrMu.Lock()
+					s.currentQR = ""
+					s.qrMu.Unlock()
+					s.logger.Info("QR code timed out")
+					// The websocket is automatically closed by whatsmeow on timeout.
+					// We need to set state back to disconnected so user can click Connect again.
+					s.setState(StateDisconnected)
 				} else {
 					s.logger.Info("QR channel event", zap.String("event", evt.Event))
 				}
@@ -186,13 +196,20 @@ func (s *Service) startAutoAITimeoutJob() {
 func (s *Service) Logout() error {
 	s.setState(StateLoggedOut)
 	
+	s.qrMu.Lock()
+	s.currentQR = ""
+	s.qrMu.Unlock()
+	
 	// Perform logout
 	err := s.client.Logout(context.Background())
 	
-	// Recreate a fresh client with a new empty device store 
-	// so the next Connect() gets a new QR code instead of "deleted device"
-	s.client.Disconnect() // just in case
+	s.client.Disconnect()
 	
+	// Force purge the device store just in case Logout failed due to network
+	if s.container != nil && s.client.Store != nil {
+		s.client.Store.Delete()
+	}
+
 	deviceStore, dbErr := s.container.GetFirstDevice(context.Background())
 	if dbErr == nil {
 		clientLog := waLog.Stdout("Client", "WARN", true)
@@ -204,14 +221,9 @@ func (s *Service) Logout() error {
 }
 
 func (s *Service) GetQR() string {
-	select {
-	case qr := <-s.qrChan:
-		// Re-queue the qr code so it can be retrieved again if needed
-		s.qrChan <- qr
-		return qr
-	default:
-		return ""
-	}
+	s.qrMu.RLock()
+	defer s.qrMu.RUnlock()
+	return s.currentQR
 }
 
 func (s *Service) GetState() ConnectionState {
