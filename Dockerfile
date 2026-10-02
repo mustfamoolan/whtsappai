@@ -19,7 +19,7 @@ WORKDIR /app
 RUN apk --no-cache add ca-certificates tzdata
 
 COPY --from=backend-builder /app/main .
-COPY --from=frontend-builder /app/dist ./public
+COPY --from=frontend-builder /public ./public
 
 # Ensure the database file is placed in a volume (if sqlite is used)
 ENV PORT=8080
