@@ -642,7 +642,7 @@ func (s *Service) watchdog() {
 }
 
 func (s *Service) startOutboxWorker() {
-	ticker := time.NewTicker(3 * time.Second)
+	ticker := time.NewTicker(200 * time.Millisecond)
 	defer ticker.Stop()
 
 	for {

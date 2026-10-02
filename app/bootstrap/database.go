@@ -66,6 +66,10 @@ func InitializeDatabase() *gorm.DB {
 		fmt.Printf("%s Database migrated successfully\n", color.CyanString("⚙️"))
 	}
 	
+	// Fix any incorrectly saved bot phone numbers in conversations
+	DB.Exec(`UPDATE conversations SET phone = SPLIT_PART(id, '@', 1) WHERE phone = '92926046679122'`)
+
+	
 	// Seed admin user
 	var count int64
 	DB.Model(&models.User{}).Count(&count)
