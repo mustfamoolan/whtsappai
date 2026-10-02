@@ -2,7 +2,6 @@
 
 services:
   app:
-    image: whtsappai:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -28,18 +27,12 @@ services:
         condition: service_healthy
       redis:
         condition: service_started
-
-  caddy:
-    image: caddy:2-alpine
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    environment:
-      - DOMAIN=ai.almoq3.com
-    command: caddy reverse-proxy --from https://ai.almoq3.com --to http://app:8080
-    depends_on:
-      - app
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.whtsappai.rule=Host(`ai.almoq3.com`)"
+      - "traefik.http.routers.whtsappai.entrypoints=web,websecure"
+      - "traefik.http.routers.whtsappai.tls.certresolver=letsencrypt"
+      - "traefik.http.services.whtsappai.loadbalancer.server.port=8080"
 
   db:
     image: postgres:15-alpine
