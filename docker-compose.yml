@@ -26,6 +26,18 @@ services:
       redis:
         condition: service_started
 
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - DOMAIN=ai.almoq3.com
+    command: caddy reverse-proxy --from https://ai.almoq3.com --to http://app:8080
+    depends_on:
+      - app
+
   db:
     image: postgres:15-alpine
     restart: unless-stopped
