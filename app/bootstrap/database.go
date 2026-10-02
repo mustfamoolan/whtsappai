@@ -58,6 +58,7 @@ func InitializeDatabase() *gorm.DB {
 		&models.AuditLog{},
 		&models.SystemSettings{},
 		&models.AIPersona{},
+		&models.OutboxMessage{},
 	)
 	if err != nil {
 		log.Printf("%s Failed to auto-migrate database: %v", color.YellowString("WARN:"), err)

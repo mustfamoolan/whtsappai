@@ -62,36 +62,34 @@ func SendMessage(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{"error": "Invalid conversation ID (JID)"})
 	}
 
-	// Create message proto
-	msgProto := &waE2E.Message{
-		Conversation: proto.String(req.Content),
-	}
-
-	resp, err := client.SendMessage(c.Context(), jid, msgProto)
-	if err != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": "Failed to send message: " + err.Error()})
-	}
-
-	msgID := resp.ID
-
 	// Save to DB
 	now := time.Now()
+	msgID := "human-out-" + fmt.Sprintf("%d", now.UnixNano())
+
 	newMsg := models.Message{
 		ID:             msgID,
 		ConversationID: req.ConversationID,
-		Sender:         "me", // or phone number
+		Sender:         "me",
 		Direction:      models.DirOutgoing,
 		Timestamp:      now,
 		Type:           models.MsgTypeText,
 		Content:        req.Content,
-		Status:         "Sent",
+		Status:         "SENT",
 		SentAt:         &now,
 	}
+
+	// Enqueue to Outbox
+	outboxMsg := models.OutboxMessage{
+		JID:    jid.String(),
+		Text:   req.Content,
+		Status: models.OutboxPending,
+	}
+	bootstrap.DB.Create(&outboxMsg)
 
 	if err := bootstrap.DB.Create(&newMsg).Error; err != nil {
 		bootstrap.Log.Error("Failed to save outgoing message to DB: " + err.Error())
 	}
-
+	
 	// Update Conversation
 	bootstrap.DB.Model(&models.Conversation{}).Where("id = ?", req.ConversationID).Updates(map[string]interface{}{
 		"last_message":  req.Content,

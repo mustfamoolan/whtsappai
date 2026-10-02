@@ -97,6 +97,7 @@ func (s *Service) init() {
 
 	go s.watchdog()
 	go s.startAutoAITimeoutJob()
+	go s.startOutboxWorker()
 }
 
 func (s *Service) Connect() error {
@@ -525,15 +526,14 @@ func (s *Service) processMessage(evt *events.Message) {
 									alertMsg = fmt.Sprintf("📅 *حجز موعد جديد*\nالمريض: %s\nرقم الهاتف: %s\nقام بحجز موعد عبر المساعد الذكي.\nيرجى مراجعة لوحة المواعيد.", conv.Name, conv.Phone)
 								}
 								
-								adminMsgProto := &waE2E.Message{
-									Conversation: proto.String(alertMsg),
+								// Enqueue to Outbox
+								outboxMsg := models.OutboxMessage{
+									JID:    adminJID.String(),
+									Text:   alertMsg,
+									Status: models.OutboxPending,
 								}
-								_, err := s.client.SendMessage(context.Background(), adminJID, adminMsgProto)
-								if err != nil {
-									s.logger.Error("Failed to send admin notification", zap.Error(err), zap.String("adminJID", adminJID.String()))
-								} else {
-									s.logger.Info("Admin notification sent", zap.String("adminJID", adminJID.String()))
-								}
+								db.Create(&outboxMsg)
+								s.logger.Info("Admin notification queued to outbox", zap.String("adminJID", adminJID.String()))
 							} else {
 								s.logger.Error("Failed to parse admin JID", zap.Error(err), zap.String("adminNum", adminNum))
 							}
@@ -544,52 +544,39 @@ func (s *Service) processMessage(evt *events.Message) {
 				// Send reply
 				jid, err := types.ParseJID(conv.ID)
 				if err == nil && replyText != "" {
-					msgProto := &waE2E.Message{
-						Conversation: proto.String(replyText),
+					now := time.Now()
+					fakeID := "ai-out-" + fmt.Sprintf("%d", now.UnixNano())
+					
+					// Save outgoing message for UI
+					outMsg := models.Message{
+						ID:             fakeID,
+						ConversationID: conv.ID,
+						Sender:         "ai",
+						Direction:      models.DirOutgoing,
+						Timestamp:      now,
+						Type:           models.MsgTypeText,
+						Content:        replyText,
+						Status:         "SENT",
+						SentAt:         &now,
 					}
-					resp, err := s.client.SendMessage(context.Background(), jid, msgProto)
-					if err == nil {
-						s.aiSentMessages.Store(resp.ID, true)
-						// Save outgoing message
-						now := time.Now()
-						outMsg := models.Message{
-							ID:             resp.ID,
-							ConversationID: conv.ID,
-							Sender:         "ai",
-							Direction:      models.DirOutgoing,
-							Timestamp:      now,
-							Type:           models.MsgTypeText,
-							Content:        replyText,
-							Status:         "SENT", // Outbox phase 13
-							SentAt:         &now,
-						}
-						db.Create(&outMsg)
+					db.Create(&outMsg)
 
-						// Update conv
-						db.Model(&conv).Updates(map[string]interface{}{
-							"last_message":  replyText,
-							"last_activity": now,
-						})
-						
-						audit.LogEvent(models.EventAIReply, "قام الذكاء الاصطناعي بالرد", conv.ID, replyText)
-						audit.LogEvent(models.EventAITrace, "سجل عمليات الذكاء الاصطناعي", conv.ID, fmt.Sprintf("Intent: %s\nReply: %s", intent, replyText))
-					} else {
-						s.logger.Error("Failed to send AI reply", zap.Error(err))
-						// Save failed outgoing message
-						now := time.Now()
-						outMsg := models.Message{
-							ID:             "fail-" + fmt.Sprintf("%d", now.UnixNano()), // Generate temp ID
-							ConversationID: conv.ID,
-							Sender:         "ai",
-							Direction:      models.DirOutgoing,
-							Timestamp:      now,
-							Type:           models.MsgTypeText,
-							Content:        replyText,
-							Status:         "FAILED", // Outbox phase 13
-							Error:          err.Error(),
-						}
-						db.Create(&outMsg)
+					// Update conv
+					db.Model(&conv).Updates(map[string]interface{}{
+						"last_message":  replyText,
+						"last_activity": now,
+					})
+					
+					// Enqueue to Outbox for real delivery
+					outboxMsg := models.OutboxMessage{
+						JID:    jid.String(),
+						Text:   replyText,
+						Status: models.OutboxPending,
 					}
+					db.Create(&outboxMsg)
+
+					audit.LogEvent(models.EventAIReply, "قام الذكاء الاصطناعي بالرد", conv.ID, replyText)
+					audit.LogEvent(models.EventAITrace, "سجل عمليات الذكاء الاصطناعي", conv.ID, fmt.Sprintf("Intent: %s\nReply: %s", intent, replyText))
 				}
 			})
 			s.debounceMu.Unlock()
@@ -615,6 +602,59 @@ func (s *Service) watchdog() {
 				if err != nil {
 					s.logger.Error("Watchdog reconnect failed", zap.Error(err))
 					s.setState(StateDisconnected)
+				}
+			}
+		}
+	}
+}
+
+func (s *Service) startOutboxWorker() {
+	ticker := time.NewTicker(3 * time.Second)
+	defer ticker.Stop()
+
+	for {
+		<-ticker.C
+		if s.client == nil || !s.client.IsConnected() {
+			continue
+		}
+
+		db := bootstrap.DB
+		if db == nil {
+			continue
+		}
+
+		var pending []models.OutboxMessage
+		// Get up to 10 pending messages
+		db.Where("status = ?", models.OutboxPending).Limit(10).Find(&pending)
+
+		for _, msg := range pending {
+			jid, err := types.ParseJID(msg.JID)
+			if err != nil {
+				db.Model(&msg).Update("status", models.OutboxFailed)
+				s.logger.Error("Outbox: failed to parse JID", zap.Error(err), zap.String("jid", msg.JID))
+				continue
+			}
+
+			msgProto := &waE2E.Message{
+				Conversation: proto.String(msg.Text),
+			}
+
+			resp, err := s.client.SendMessage(context.Background(), jid, msgProto)
+			if err == nil {
+				s.aiSentMessages.Store(resp.ID, true)
+				db.Model(&msg).Updates(map[string]interface{}{
+					"status": models.OutboxSent,
+				})
+			} else {
+				msg.Retries++
+				if msg.Retries >= 5 {
+					db.Model(&msg).Updates(map[string]interface{}{
+						"status":  models.OutboxFailed,
+						"retries": msg.Retries,
+					})
+					s.logger.Error("Outbox: failed to send message (max retries)", zap.Error(err), zap.String("jid", msg.JID))
+				} else {
+					db.Model(&msg).Update("retries", msg.Retries)
 				}
 			}
 		}
