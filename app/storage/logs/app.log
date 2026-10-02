@@ -437,3 +437,4 @@
 {"level":"info","ts":"2026-10-02T15:08:12.323+0300","logger":"whatsapp","caller":"whatsapp/service.go:331","msg":"Received message","id":"AC5EFF398243FABF071FE0636E8D9C33"}
 {"level":"info","ts":"2026-10-02T15:08:12.332+0300","logger":"whatsapp","caller":"whatsapp/service.go:452","msg":"Message saved","msgID":"AC5EFF398243FABF071FE0636E8D9C33","phone":"196912053489879"}
 {"level":"info","ts":"2026-10-02T15:08:13.678+0300","logger":"whatsapp","caller":"whatsapp/service.go:254","msg":"WhatsApp state changed","state":"LOGGED_OUT"}
+{"level":"info","ts":"2026-10-02T15:13:30.917+0300","logger":"whatsapp","caller":"whatsapp/service.go:180","msg":"Auto-reverted 1 conversations back to AI mode due to 5 minutes inactivity"}

@@ -62,6 +62,24 @@ export default function WhatsAppDashboard() {
     }
   };
 
+  const handleRefresh = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('/api/v1/whatsapp/refresh', { method: 'POST' });
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error || 'Failed to refresh');
+      }
+      fetchStatus();
+      setQrCode('');
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleLogout = async () => {
     setLoading(true);
     setError(null);
@@ -137,9 +155,14 @@ export default function WhatsAppDashboard() {
               <div className="flex flex-col items-center justify-center p-6 bg-white rounded-lg border max-w-sm mt-4">
                 <h3 className="mb-4 text-sm font-medium text-slate-900">امسح الرمز بواسطة واتساب</h3>
                 <QRCodeSVG value={qrCode} size={256} />
-                <p className="mt-4 text-xs text-slate-500 text-center">
-                  افتح واتساب على هاتفك، اذهب إلى الإعدادات {'>'} الأجهزة المرتبطة {'>'} ربط جهاز.
-                </p>
+                <div className="mt-4 flex flex-col items-center gap-2">
+                  <p className="text-xs text-slate-500 text-center">
+                    افتح واتساب على هاتفك، اذهب إلى الإعدادات {'>'} الأجهزة المرتبطة {'>'} ربط جهاز.
+                  </p>
+                  <Button variant="outline" size="sm" onClick={handleRefresh} disabled={loading} className="mt-2 text-xs">
+                    تحديث الباركود
+                  </Button>
+                </div>
               </div>
             )}
             

@@ -70,7 +70,7 @@ func GetService(logger *zap.Logger) *Service {
 
 func (s *Service) init() {
 	// Set default device properties to Mac OS to avoid being blocked by WhatsApp
-	store.DeviceProps.PlatformType = waCompanionReg.DeviceProps_MAC.Enum()
+	store.DeviceProps.PlatformType = waCompanionReg.DeviceProps_CHROME.Enum()
 	store.DeviceProps.Os = proto.String("Mac OS")
 
 	dbConfig := config.Global.Database
@@ -112,6 +112,11 @@ func (s *Service) Connect() error {
 		return nil
 	}
 	
+	if s.GetState() == StateConnecting {
+		// Already connecting, don't spawn multiple goroutines
+		return nil
+	}
+	
 	s.setState(StateConnecting)
 
 	if s.client.Store.ID == nil {
@@ -134,8 +139,6 @@ func (s *Service) Connect() error {
 					s.currentQR = ""
 					s.qrMu.Unlock()
 					s.logger.Info("QR code timed out")
-					// The websocket is automatically closed by whatsmeow on timeout.
-					// We need to set state back to disconnected so user can click Connect again.
 					s.setState(StateDisconnected)
 				} else {
 					s.logger.Info("QR channel event", zap.String("event", evt.Event))
@@ -151,6 +154,15 @@ func (s *Service) Connect() error {
 		}
 	}
 	return nil
+}
+
+func (s *Service) Refresh() error {
+	s.client.Disconnect()
+	s.qrMu.Lock()
+	s.currentQR = ""
+	s.qrMu.Unlock()
+	s.setState(StateDisconnected)
+	return s.Connect()
 }
 
 func (s *Service) Disconnect() {
@@ -207,7 +219,7 @@ func (s *Service) Logout() error {
 	
 	// Force purge the device store just in case Logout failed due to network
 	if s.container != nil && s.client.Store != nil {
-		s.client.Store.Delete()
+		s.client.Store.Delete(context.Background())
 	}
 
 	deviceStore, dbErr := s.container.GetFirstDevice(context.Background())

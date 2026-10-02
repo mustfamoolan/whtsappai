@@ -40,6 +40,7 @@ func RegisterAPIRoutes(app *fiber.App) {
 	wa.Get("/status", controllers.GetWhatsAppStatus)
 	wa.Get("/qr", controllers.GetWhatsAppQR)
 	wa.Post("/connect", controllers.ConnectWhatsApp)
+	wa.Post("/refresh", controllers.RefreshWhatsApp)
 	wa.Post("/logout", controllers.LogoutWhatsApp)
 
 	// Chat routes

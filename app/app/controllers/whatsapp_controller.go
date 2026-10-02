@@ -41,6 +41,20 @@ func ConnectWhatsApp(c *fiber.Ctx) error {
 	})
 }
 
+func RefreshWhatsApp(c *fiber.Ctx) error {
+	svc := whatsapp.GetService(bootstrap.Log)
+	err := svc.Refresh()
+	if err != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+			"error": err.Error(),
+		})
+	}
+	
+	return c.JSON(fiber.Map{
+		"message": "Refresh initiated",
+	})
+}
+
 func LogoutWhatsApp(c *fiber.Ctx) error {
 	svc := whatsapp.GetService(bootstrap.Log)
 	err := svc.Logout()
